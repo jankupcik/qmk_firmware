@@ -1,0 +1,129 @@
+#include QMK_KEYBOARD_H
+
+
+#define _QWERTY           0
+#define _NUMBERS_SYMBOLS  1
+#define _CZL              2   // lower-case czech letters
+#define _CZH              3   // upper-case czech letters
+#define _NAV              4
+#define _ADJUST           5
+
+#define _A_ALT     LALT_T(KC_A)
+#define _D_CTRL    LCTL_T(KC_D)
+#define _F_NUM     LT(_NUMBERS_SYMBOLS, KC_F)
+#define _I_CTRL    LCTL_T(KC_I)
+#define _O_SHFT    LSFT_T(KC_O)
+#define _P_CZL     LT(_CZL, KC_P)
+#define _Q_CZL     LT(_CZL, KC_Q)
+#define _S_SHFT    LSFT_T(KC_S)
+#define _ESC_SHFT  LSFT_T(KC_ESC)
+#define _SCLN_NUM  LT(_NUMBERS_SYMBOLS, KC_SCOLON)
+#define _SLSH_ALT  LALT_T(KC_SLSH)
+#define _TAB_CZH   LT(_CZH, KC_TAB)
+#define _XXX_CZH   LT(_CZH, XXXXXXX)
+#define _XXX_NAV   LT(_NAV, XXXXXXX)
+#define _XXX_NS    LT(_NUMBERS_SYMBOLS, XXXXXXX)
+#define _ALT_F4    LALT(KC_F4)
+#define _ALT_PSCR  LALT(KC_PSCREEN)
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+  [_QWERTY] = LAYOUT(
+  //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+     KC_GRV   ,KC_1     ,KC_2     ,KC_3     ,KC_4     ,KC_5     ,                                                       KC_6     ,KC_7     ,KC_8     ,KC_9     ,KC_0     ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     _TAB_CZH ,KC_Q     ,KC_W     ,KC_E     ,KC_R     ,KC_T     ,XXXXXXX  ,                                   XXXXXXX  ,KC_Y     ,KC_U     ,KC_I     ,KC_O     ,KC_P     ,_XXX_CZH ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     _ESC_SHFT,KC_A     ,KC_S     ,KC_D     ,KC_F     ,KC_G     ,XXXXXXX  ,                                   XXXXXXX  ,KC_H     ,KC_J     ,KC_K     ,KC_L     ,KC_SCLN  ,KC_LSFT  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     KC_LCTRL ,KC_Z     ,KC_X     ,KC_C     ,KC_V     ,KC_B     ,   _ALT_F4  ,XXXXXXX  ,         XXXXXXX  ,KC_DEL   ,   KC_N     ,KC_M     ,KC_COMM  ,KC_DOT   ,KC_SLSH  ,KC_LCTRL ,
+  //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,KC_LGUI  ,KC_LALT  ,_XXX_NAV ,     _XXX_NS  ,        KC_ENT   ,XXXXXXX  ,         _XXX_NS  ,KC_BSPC  ,        KC_SPC   ,     KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  
+  //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
+  ),
+
+  [_NUMBERS_SYMBOLS] = LAYOUT(
+  //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+  //│         │   F1    │   F2    │   F3    │   F4    │   F5    │                                                      │   F6    │   F7    │   F8    │   F9    │   F10   │   F11   │
+     XXXXXXX  ,KC_F1    ,KC_F2    ,KC_F3    ,KC_F4    ,KC_F5    ,                                                       KC_F6    ,KC_F7    ,KC_F8    ,KC_F9    ,KC_F10   ,KC_F11   ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+  //│         │    <    │    [    │    (    │    {    │         │         │                                  │         │         │    }    │    )    │    ]    │    >    │   F12   │
+     KC_TAB   ,KC_LT    ,KC_LBRC  ,KC_LPRN  ,KC_LCBR  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,KC_SLSH  ,KC_RCBR  ,KC_RPRN  ,KC_RBRC  ,KC_GT    ,KC_F12   ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+  //│         │    1    │    2    │    3    │    4    │    5    │         │                                  │         │    6    │    7    │    8    │    9    │    0    │    '    │
+     _______  ,KC_1     ,KC_2     ,KC_3     ,KC_4     ,KC_5     ,XXXXXXX  ,                                   XXXXXXX  ,KC_6     ,KC_7     ,KC_8     ,KC_9     ,KC_0     ,KC_QUOT  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+  //│         │    |    │    \    │    /    │    =    │    _    │  │         │         │        │         │         │  │    +    │    -    │    ,    │    .    │    "    │         │
+     _______  ,XXXXXXX  ,KC_BSLS  ,KC_SLSH  ,KC_EQL   ,KC_UNDS  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   KC_PLUS  ,KC_MINS  ,KC_COMM  ,KC_DOT   ,KC_DQUO  ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
+  //│         │         │         │         │    │         │       │         │         │        │         │         │       │         │    │         │         │         │         │
+     XXXXXXX  ,XXXXXXX  ,_______  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        _______  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
+  //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
+  ),
+
+  [_NAV] = LAYOUT(
+  //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+     XXXXXXX  ,XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,                                                       XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,KC_PSCR  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  ,XXXXXXX  ,KC_LSFT  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   XXXXXXX  ,KC_PGDN  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,KC_LCTRL ,
+  //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        XXXXXXX  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
+  //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
+  )
+
+};
+
+/*
+  [_LAYOUT_NAME_] = LAYOUT(
+  //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                                       XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,XXXXXXX  ,   XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,
+  //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
+     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,XXXXXXX  ,        XXXXXXX  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
+  //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
+  )
+*/
+
+/*
+https://unicode-table.com/en/#2500
+https://asylum.madhouse-project.org/blog/#2016
+https://config.qmk.fm/#/redox/rev1/LAYOUT
+https://typing.io
+*/
+
+/*
+cd /c/qmk
+make redox/rev1:jk
+*/
+
+
+/*
+TODO:
+- VIM ma problem: j, k, l nefunguje, protoze dlouhy stisk dela modifikator
+- vyresit problem s rychlym jk
+- v numerickem rezimu zvazit jak desetinnou tecku, tak i carku
+- pro debugging umoznit zapnout numerickou vrstvu tak, aby bylo Fn aktivni, dokud jej nevypnu
+- a, q, p - levy malicek mam pomaly, takze dela dlouhy funkcni stisk
+- ALT-F7 (vyhledat reference) je problem pri psani kodu - je potreba stisknout 3 klavesy
+- bylo by pekne mit moznost zmacknout tuto kombinaci pouze levou rukou
+
+HIGH PRIORITY:
+- GIT repository
+- logging klaves
+- vrstva 0 - klavesa vpravo nahore (XX) - tap dance - napr. XX 
+	+ R = reset = CTRL + ALT + DELETE
+	+ C = caps lock on/off
+
+LOW PRIORITY:
+- mazu soubor pravou rukou pomoci delete, ale enter mam vlevo...
+- bylo by pekne mit CTRL+ALT+DEL na jedne ruce
+*/
