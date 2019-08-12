@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______  ,KC_1     ,KC_2     ,KC_3     ,KC_4     ,KC_5     ,XXXXXXX  ,                                   XXXXXXX  ,KC_6     ,KC_7     ,KC_8     ,KC_9     ,KC_0     ,KC_QUOT  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
   //│         │    |    │    \    │    /    │    =    │    _    │  │         │         │        │         │         │  │    +    │    -    │    ,    │    .    │    "    │         │
-     _______  ,XXXXXXX  ,KC_BSLS  ,KC_SLSH  ,KC_EQL   ,KC_UNDS  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   KC_PLUS  ,KC_MINS  ,KC_COMM  ,KC_DOT   ,KC_DQUO  ,XXXXXXX  ,
+     _______  ,KC_PIPE  ,KC_BSLS  ,KC_SLSH  ,KC_EQL   ,KC_UNDS  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   KC_PLUS  ,KC_MINS  ,KC_COMM  ,KC_DOT   ,KC_DQUO  ,XXXXXXX  ,
   //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
   //│         │         │         │         │    │         │       │         │         │        │         │         │       │         │    │         │         │         │         │
      XXXXXXX  ,XXXXXXX  ,_______  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        _______  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
