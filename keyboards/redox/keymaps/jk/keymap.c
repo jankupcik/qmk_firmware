@@ -7,27 +7,21 @@
 #define _NUMBERS_SYMBOLS  1
 #define _CZL              2   // lower-case czech letters
 #define _CZH              3   // upper-case czech letters
-#define _NAV              4
+#define _EXTRA            4   // navigation, shortcuts, commands
 #define _ADJUST           5
 
-#define _A_ALT     LALT_T(KC_A)
-#define _D_CTRL    LCTL_T(KC_D)
-#define _F_NUM     LT(_NUMBERS_SYMBOLS, KC_F)
-#define _I_CTRL    LCTL_T(KC_I)
-#define _O_SHFT    LSFT_T(KC_O)
 #define _P_CZL     LT(_CZL, KC_P)
 #define _Q_CZL     LT(_CZL, KC_Q)
-#define _S_SHFT    LSFT_T(KC_S)
 #define _ESC_SHFT  LSFT_T(KC_ESC)
-#define _SCLN_NUM  LT(_NUMBERS_SYMBOLS, KC_SCOLON)
-#define _SLSH_ALT  LALT_T(KC_SLSH)
 #define _TAB_CZH   LT(_CZH, KC_TAB)
 #define _XXX_CZH   LT(_CZH, XXXXXXX)
-#define _XXX_NAV   LT(_NAV, XXXXXXX)
+#define _XXX_EXT   LT(_EXTRA, XXXXXXX)
 #define _XXX_NS    LT(_NUMBERS_SYMBOLS, XXXXXXX)
-#define _ALT_F4    LALT(KC_F4)
-#define _ALT_PSCR  LALT(KC_PSCREEN)
-#define _RESET     LCA(DELETE)  // CTRL + ALT + DELETE
+#define _ALT_F4    A(KC_F4)
+#define _ALT_PSCR  A(KC_PSCREEN)
+#define _CA_DEL    LCA(KC_DELETE)                    // CTRL + ALT + DELETE (R key = reset)
+#define _COPY_E    C(KC_INSERT)                      // CTRL + INSERT (R key = reset)
+#define _PASTE_E   S(KC_INSERT)                      // SHIFT + INSERT
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -41,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
      KC_LCTRL ,KC_Z     ,KC_X     ,KC_C     ,KC_V     ,KC_B     ,   _ALT_F4  ,XXXXXXX  ,         XXXXXXX  ,KC_DEL   ,   KC_N     ,KC_M     ,KC_COMM  ,KC_DOT   ,KC_SLSH  ,KC_LCTRL ,
   //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
-     KC_LGUI  ,XXXXXXX  ,KC_LALT  ,_XXX_NAV ,     _XXX_NS  ,        KC_ENT   ,XXXXXXX  ,         _XXX_NS  ,KC_BSPC  ,        KC_SPC   ,     KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  
+     KC_LGUI  ,XXXXXXX  ,KC_LALT  ,_XXX_EXT ,     _XXX_NS  ,        KC_ENT   ,XXXXXXX  ,         _XXX_NS  ,KC_BSPC  ,        KC_SPC   ,     KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  
   //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
   ),
 
@@ -64,15 +58,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
   ),
 
-  [_NAV] = LAYOUT(
+  [_EXTRA] = LAYOUT(
   //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
      XXXXXXX  ,XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,                                                       XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,KC_PSCR  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,_RESET   ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
+     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,_CA_DEL  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
      _______  ,XXXXXXX  ,XXXXXXX  ,KC_DEL   ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  ,XXXXXXX  ,KC_LSFT  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   XXXXXXX  ,KC_PGDN  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,KC_LCTRL ,
+     _______  ,XXXXXXX  ,XXXXXXX  ,_COPY_E  ,_PASTE_E ,XXXXXXX  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   XXXXXXX  ,KC_PGDN  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,KC_LCTRL ,
   //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
      XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        XXXXXXX  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
   //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
