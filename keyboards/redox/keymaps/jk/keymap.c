@@ -1,3 +1,5 @@
+// vim: set cursorcolumn:
+
 #include QMK_KEYBOARD_H
 
 
