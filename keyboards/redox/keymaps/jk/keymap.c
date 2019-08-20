@@ -14,8 +14,8 @@
 #define _I_CTRL    LCTL_T(KC_I)
 #define _P_CZL     LT(_CZL, KC_P)
 #define _Q_CZL     LT(_CZL, KC_Q)
-#define _ESC_SHFT  LSFT_T(KC_ESC)
-#define _TAB_CZH   LT(_CZH, KC_TAB)
+#define _TAB_SHFT  LSFT_T(KC_TAB)
+#define _ESC_CZH   LT(_CZH, KC_ESC)
 #define _XXX_CZH   LT(_CZH, XXXXXXX)
 #define _XXX_EXT   LT(_EXTRA, XXXXXXX)
 #define _XXX_NS    LT(_NUMBERS_SYMBOLS, XXXXXXX)
@@ -31,9 +31,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
      KC_GRV   ,KC_1     ,KC_2     ,KC_3     ,KC_4     ,KC_5     ,                                                       KC_6     ,KC_7     ,KC_8     ,KC_9     ,KC_0     ,XXXXXXX  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-     _TAB_CZH ,KC_Q     ,KC_W     ,_E_CTRL  ,KC_R     ,KC_T     ,XXXXXXX  ,                                   XXXXXXX  ,KC_Y     ,KC_U     ,_I_CTRL  ,KC_O     ,KC_P     ,_XXX_CZH ,
+     _ESC_CZH ,KC_Q     ,KC_W     ,_E_CTRL  ,KC_R     ,KC_T     ,XXXXXXX  ,                                   XXXXXXX  ,KC_Y     ,KC_U     ,_I_CTRL  ,KC_O     ,KC_P     ,_XXX_CZH ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-     _ESC_SHFT,KC_A     ,KC_S     ,KC_D     ,KC_F     ,KC_G     ,XXXXXXX  ,                                   XXXXXXX  ,KC_H     ,KC_J     ,KC_K     ,KC_L     ,KC_SCLN  ,KC_LSFT  ,
+     _TAB_SHFT,KC_A     ,KC_S     ,KC_D     ,KC_F     ,KC_G     ,XXXXXXX  ,                                   XXXXXXX  ,KC_H     ,KC_J     ,KC_K     ,KC_L     ,KC_SCLN  ,KC_LSFT  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
      KC_LCTRL ,KC_Z     ,KC_X     ,KC_C     ,KC_V     ,KC_B     ,   _ALT_F4  ,XXXXXXX  ,         XXXXXXX  ,KC_DEL   ,   KC_N     ,KC_M     ,KC_COMM  ,KC_DOT   ,KC_SLSH  ,KC_LCTRL ,
   //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_EXTRA] = LAYOUT(
   //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-     XXXXXXX  ,XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,                                                       XXXXXXX  ,KC_VOLU  ,KC_VOLD  ,KC_MUTE  ,XXXXXXX  ,KC_PSCR  ,
+     XXXXXXX  ,KC_MUTE  ,KC_VOLD  ,KC_VOLU  ,XXXXXXX  ,XXXXXXX  ,                                                       XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,KC_PSCR  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
      _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,_CA_DEL  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
