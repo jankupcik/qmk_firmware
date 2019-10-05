@@ -121,13 +121,45 @@ TODO:
 - bylo by pekne mit moznost zmacknout tuto kombinaci pouze levou rukou
 
 HIGH PRIORITY:
-- GIT repository
 - logging klaves
 - vrstva 0 - klavesa vpravo nahore (XX) - tap dance - napr. XX 
 	+ R = reset = CTRL + ALT + DELETE
 	+ C = caps lock on/off
 
-LOW PRIORITY:
-- mazu soubor pravou rukou pomoci delete, ale enter mam vlevo...
-- bylo by pekne mit CTRL+ALT+DEL na jedne ruce
+
+00E1 á
+00C1 Á
+010D č
+010C Č
+010F ď
+010E Ď
+00E9 é
+00C9 É
+011B ě
+011A Ě
+00ED í
+00CD Í
+0148 ň
+0147 Ň
+00F3 ó
+00D3 Ó
+0159 ř
+0158 Ř
+0161 š
+0160 Š
+0165 ť
+0164 Ť
+00FA ú
+00DA Ú
+016F ů
+016E Ů
+00FD ý
+00DD Ý
+017E ž
+017D Ž
+
+
+háček   - caron
+čárka   - acute
+kroužek - ring above
 */
