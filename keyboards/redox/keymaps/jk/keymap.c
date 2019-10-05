@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______  ,KC_PIPE  ,KC_BSLS  ,KC_SLSH  ,KC_EQL   ,KC_UNDS  ,   XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,   KC_PLUS  ,KC_MINS  ,KC_COMM  ,KC_DOT   ,KC_DQUO  ,XXXXXXX  ,
   //├─────────┼─────────┼─────────┼─────────┼────┬────┴────┬────┘  ├─────────┼─────────┤        ├─────────┼─────────┤  └────┬────┴────┬────┼─────────┼─────────┼─────────┼─────────┤
   //│         │         │         │         │    │         │       │         │         │        │         │         │       │         │    │         │         │         │         │
-     XXXXXXX  ,XXXXXXX  ,_______  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        _______  ,     XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
+     XXXXXXX  ,XXXXXXX  ,_______  ,XXXXXXX  ,     XXXXXXX  ,        XXXXXXX  ,XXXXXXX  ,         XXXXXXX  ,_______  ,        _______  ,     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  
   //└─────────┴─────────┴─────────┴─────────┘    └─────────┘       └─────────┴─────────┘        └─────────┴─────────┘       └─────────┘    └─────────┴─────────┴─────────┴─────────┘
   ),
 
