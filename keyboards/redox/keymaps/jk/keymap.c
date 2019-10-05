@@ -25,6 +25,7 @@
 #define _CUT_E     C(KC_X)                           // CTRL + X
 #define _COPY_E    C(KC_INSERT)                      // CTRL + INSERT
 #define _PASTE_E   S(KC_INSERT)                      // SHIFT + INSERT
+#define _LOCK      LWIN(KC_L)                        // EXTRA(Q) = WIN + L (enables to hit WIN + L with an only hand)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -65,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                                                      ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
      XXXXXXX  ,KC_MUTE  ,KC_VOLD  ,KC_VOLU  ,XXXXXXX  ,XXXXXXX  ,                                                       XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,KC_PSCR  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                  ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-     _______  ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,_CA_DEL  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
+     _______  ,_LOCK    ,XXXXXXX  ,XXXXXXX  ,_CA_DEL  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,XXXXXXX  ,KC_PGUP  ,KC_HOME  ,KC_END   ,XXXXXXX  ,_ALT_PSCR,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                  ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
      _______  ,XXXXXXX  ,XXXXXXX  ,KC_DEL   ,XXXXXXX  ,XXXXXXX  ,XXXXXXX  ,                                   XXXXXXX  ,KC_LEFT  ,KC_DOWN  ,KC_UP    ,KC_RGHT  ,XXXXXXX  ,KC_LSFT  ,
   //├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼──┬──────┴──┬─────────┐        ┌─────────┬──┴──────┬──┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
