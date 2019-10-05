@@ -2,7 +2,7 @@
 
 #include QMK_KEYBOARD_H
 
-
+// Layers
 #define _QWERTY           0
 #define _NUMBERS_SYMBOLS  1
 #define _CZL              2   // lower-case czech letters
@@ -10,15 +10,18 @@
 #define _EXTRA            4   // navigation, shortcuts, commands
 #define _ADJUST           5
 
+// Keys (sorted alphabetically)
 #define _E_CTRL    LCTL_T(KC_E)
+#define _ESC_CZH   LT(_CZH, KC_ESC)
 #define _I_CTRL    LCTL_T(KC_I)
 #define _P_CZL     LT(_CZL, KC_P)
 #define _Q_CZL     LT(_CZL, KC_Q)
 #define _TAB_SHFT  LSFT_T(KC_TAB)
-#define _ESC_CZH   LT(_CZH, KC_ESC)
 #define _XXX_CZH   LT(_CZH, XXXXXXX)
 #define _XXX_EXT   LT(_EXTRA, XXXXXXX)
 #define _XXX_NS    LT(_NUMBERS_SYMBOLS, XXXXXXX)
+
+// Special combinations
 #define _ALT_F4    A(KC_F4)
 #define _ALT_PSCR  A(KC_PSCREEN)
 #define _CA_DEL    LCA(KC_DELETE)                    // CTRL + ALT + DELETE (R key = reset)
