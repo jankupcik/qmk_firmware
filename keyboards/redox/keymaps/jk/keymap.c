@@ -112,9 +112,7 @@ make redox/rev1:jk
 
 /*
 TODO:
-- VIM ma problem: j, k, l nefunguje, protoze dlouhy stisk dela modifikator
 - vyresit problem s rychlym jk
-- v numerickem rezimu zvazit jak desetinnou tecku, tak i carku
 - pro debugging umoznit zapnout numerickou vrstvu tak, aby bylo Fn aktivni, dokud jej nevypnu
 - a, q, p - levy malicek mam pomaly, takze dela dlouhy funkcni stisk
 - ALT-F7 (vyhledat reference) je problem pri psani kodu - je potreba stisknout 3 klavesy
