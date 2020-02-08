@@ -131,10 +131,65 @@ void matrix_init_user(void)
 }
 
 
+// timer_read() and timer_elased() defined in C:\qmk\tmk_core\common\timer.h
+//
+static bool lshift_active = false;
+static uint16_t lshift_down = 0;
+static bool rshift_active = false;
+static uint16_t rshift_down = 0;
+
 // https://docs.qmk.fm/#/feature_macros
 // https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
+#ifdef CONSOLE_ENABLE
+	// uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
+
+	uint8_t row = record->event.key.row;
+	uint8_t col = record->event.key.col;
+
+	if (record->event.pressed)
+	{
+		if (col == 0 && row == 2)
+		{
+			lshift_down = timer_read();
+			lshift_active = true;
+		}
+		else if (col == 0 && row == 7)
+		{
+			rshift_down = timer_read();
+			rshift_active = true;
+		}
+		else
+		{
+			if (lshift_active)
+			{
+				uint16_t elapsed = timer_elapsed(lshift_down);
+				lshift_active = false;
+				uprintf("L-shft: %u\n", elapsed);
+			}
+			else if (rshift_active)
+			{
+				uint16_t elapsed = timer_elapsed(rshift_down);
+				rshift_active = false;
+				uprintf("R-shft: %u\n", elapsed);
+			}
+		}
+	}
+	else
+	{
+		if (col == 0 && row == 2)
+		{
+			lshift_active = false;
+		}
+		else if (col == 0 && row == 7)
+		{
+			rshift_active = false;
+		}
+	}
+
+#endif 
+
 	return true;
 }
 
